@@ -4,20 +4,23 @@
 
 <script src="<?= base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
 <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+
 <!-- DataTables JS -->
-<script src="<?= base_url('assets/vendor/datatables/jquery.dataTables.min.js') ?>" rel="stylesheet"></script>
-<script src="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.js') ?>" rel="stylesheet"></script>
+<script src="<?= base_url('assets/vendor/datatables/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.js'); ?>"></script>
+
 <script src="<?= base_url('assets/js/sb-admin-2.min.js'); ?>"></script>
 
 <script>
-    $(document).ready(function() {
+$(document).ready(function() {
     $('#dataTable').DataTable({
         "language": {
-            "search": "Cari:",
-            "lengthMenu": "Tampilkan Menu data",
-            "info": "Menampilkan START sampai END dari TOTAL data",
+            "search": "Cari Anggota:",
+            "lengthMenu": "Tampilkan _MENU_ data anggota",
+            "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ anggota",
+            "zeroRecords": "Data anggota tidak ditemukan",
             "paginate":{
-                "previous": "sebelumnya",
+                "previous": "Sebelumnya",
                 "next": "Berikutnya"
             }
         }

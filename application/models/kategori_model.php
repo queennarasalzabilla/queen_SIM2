@@ -1,24 +1,24 @@
 <?php
-defined('BASEPATH') OR exit('No direct script acces allowed');
+class Anggota_model extends CI_Model {
 
-class Kategori_model extends CI_Model{
+    public function get_all() {
+        return $this->db->get('anggota')->result();
+    }
 
-    private $table ='Kategori';
+    public function insert($data) {
+        return $this->db->insert('anggota', $data);
+    }
 
-    public function get_all()
-    {
-        return $this->db->get($this->table)->result();
+    public function get_by_id($id) {
+        return $this->db->get_where('anggota', ['id'=>$id])->row();
     }
-    public function insert($data)
-    {
-        return $this->db->insert($this->table, $data);
+
+    public function update($id, $data) {
+        $this->db->where('id', $id);
+        return $this->db->update('anggota', $data);
     }
-    public function delete($id)
-    {
-        return $this->db->delete($this->table,['id'=>$id]);
-    }
-    public function is_used($id)
-    {
-        return $this->db->where('id',$id)->count_all_results ('buku')>0;
+
+    public function delete($id) {
+        return $this->db->delete('anggota', ['id'=>$id]);
     }
 }
