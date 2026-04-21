@@ -9,7 +9,7 @@ class Anggota extends CI_Controller {
         $this->load->model('Anggota_model');
     }
 
-    // 🔹 TAMPIL DATA
+    
     public function index()
     {
         $data['anggota'] = $this->Anggota_model->get_all();
@@ -21,7 +21,7 @@ class Anggota extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    // 🔹 FORM TAMBAH
+    
     public function tambah()
     {
         $this->load->view('templates/header');
@@ -31,7 +31,7 @@ class Anggota extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    // 🔹 SIMPAN DATA
+    
     public function simpan()
     {
         $data = [
@@ -49,7 +49,7 @@ class Anggota extends CI_Controller {
         redirect('anggota');
     }
 
-    // 🔹 FORM EDIT
+    
     public function edit($id)
     {
         $data['anggota'] = $this->Anggota_model->get_by_id($id);
@@ -65,7 +65,7 @@ class Anggota extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    // 🔹 UPDATE DATA
+    
     public function update($id)
     {
         $data = [
@@ -83,7 +83,7 @@ class Anggota extends CI_Controller {
         redirect('anggota');
     }
 
-    // 🔹 HAPUS DATA
+    
     public function hapus($id)
     {
         $this->Anggota_model->delete($id);
