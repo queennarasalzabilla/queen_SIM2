@@ -1,36 +1,35 @@
-<h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+<div class="container-fluid">
+<h2 class="h3 mb-4 text-gray-800">Data Kategori</h2>
 
-<div class="row">
-    <!--kategori-->
-    <div class="col-xl-4 col-md-6 mb-4">
-        <div class="card-border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <h5>Total Kategori</h5>
-                <h3><?= $total_kategori; ?></h3>
-            </div>
-        </div>
-    </div>
-    <!--anggota-->
-    <div class="col-xl-4 col-md-6 mb-4">
-        <div class="card-border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <h5>Total Anggota</h5>
-                <h3><?= $total_anggota; ?></h3>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-    <div class="col-xl-6 col-lg-4">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Grafik Pertumbuhan Data</h6>
-            </div>
-            <div class="card-body">
-                <div class="chart-area">
-                    <canvas id="chartDashboard" style="max-height: 200px;"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
+<a href="<?= site_url('kategori/tambah'); ?>" class="btn btn-primary mb-3">
+    <i class="fas fa-plus"></i>Tambah</a>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<thead class="thead-dark">
+    <tr>
+        <th>No</th>
+        <th>Nama Kategori</th>
+        <th>Aksi</th>
+    </tr>
+</thead>
+<tbody>
+<?php $no=1; foreach($kategori as $k): ?>
+    <tr>
+        <td><?= $no++; ?></td>
+        <td><?= $k->nama_kategori; ?></td>
+        <td>
+            <a href="<?= site_url('kategori/edit/'.$k->id); ?>">Edit</a>
+            <a href="<?= site_url('kategori/hapus/'.$k->id); ?>"
+            onclick="return confirm('yakin?')">Hapus</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>

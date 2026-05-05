@@ -19,6 +19,18 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('Peminjaman'); ?>">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Peminjaman</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('Buku'); ?>">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Buku</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?= site_url('Anggota'); ?>">
             <i class="fas fa-fw fa-folder"></i>
             <span>Anggota</span>
